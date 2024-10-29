@@ -6,12 +6,15 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This repository is a collection of machine learning algorithms and tools for chemistry. It is inspired by “A general-purpose machine learning framework for predicting” by Ward et al. [1]. The goal of this project is to provide a general-purpose machine learning framework for predicting materials properties.
+This repository contains machine learning algorithms and tools for chemistry. It is inspired by “A general-purpose machine learning framework for predicting” by Ward et al. [1]. The goal of this project is to provide a general-purpose machine learning framework for predicting materials properties.
 
 ## Introduction
 It is often hard to embed the chemical structure of a molecule into a machine learning model. Inspired by the work of Ward et al. [1], I use the stiochiometric attributes, elemental attrubutes, electronic structures attributes and ionic attributes to describe the molecule and embed them into a machine learning model. The model is trained on the Quantum Machine Database (QMDB) and is able to predict the properties of a inorganic molecule.
 
-Below is a schematic of the model:
+Basically, the model takes the chemical formula of a molecule as input and outputs the properties of the molecule. The properties of the molecule are the band gap, formation energy, and the stability of the molecule. Before training the model, the chemical formula is converted into a set of attributes that describe the molecule. The attributes are then fed into the machine learning model to train the model.
+
+**Below is a schematic of the model:**
+
 ![Model](./assets/img/model.png)
 
 > 1. Stoichiometric attributes that depend only on the fractions of elements present and not what those elements actually are. These include the number of elements present in the compound and several Lp norms of the fractions.  
@@ -19,7 +22,7 @@ Below is a schematic of the model:
 > 3. Electronic structure attributes, which are the average fraction of electrons from the s, p, d and f valence shells between all present elements. These are identical to the attributes used by Meredig et al.
 > 4. Ionic compound attributes that include whether it is possible to form an ionic compound assuming all elements are present in a single oxidation state, and two adaptations of the fractional ‘ionic character’ of a compound based on an electronegativitybased measure.
 
-<p align="right">Ward et al. [1]</p>
+<p align="right">--- Ward et al. [1]</p>
 
 ## Datasets
 The datasets used in this project are from the Quantum Machine Database (QMDB). The QMDB is a collection of quantum mechanical data for molecules and materials. The `data/datasets/small-data.txt` is a small dataset used for testing the model. The full dataset is not included in this repository due to its size. The full dataset can be downloaded from the [QMDB website](http://quantum-machine.org/datasets/).
@@ -45,6 +48,11 @@ git clone https://github.com/eric-xin/Chem_ML.git
 cd Chem_ML
 pip install -r requirements.txt
 ```
+
+## Model Structure
+*This is the structure of the currently used residue model*
+
+![Model Structure](./assets/img/model_structure.png)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
