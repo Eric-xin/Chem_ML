@@ -57,6 +57,13 @@ pip install -r requirements.txt
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## To-Do
+- [ ] Implement the model on Google Colab to use more memory.
+- [ ] Add the Ionic Compound Attributes to the training features. *
+- [ ] Increase the amount of data used in training.
+
+\* Note: The Ionic Compound Attributes are implemented in the code but are not used in the training features, because the ionization energy data is missing for some elements at certain oxidation states. This causes the model to crash when training (NaN values). Currently thinking of using the average ionization energy of the elements to fill in the missing values.
+
 ## Contact
 If you have any questions, feel free to contact me at [me@ericxin.eu](mailto:me@ericxin.eu)
 
