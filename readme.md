@@ -1,4 +1,32 @@
-# Chem_ML: Machine Learning for Chemistry
+<!-- # Chem_ML: Machine Learning for Chemistry -->
+
+<div>
+  <h1 align="center">⚛️ Chem_ML 🤖</h1>
+  <h3 align="center">
+    <a href="https://github.com/eric-xin/Chem_ML" style="text-decoration: none; color: inherit;">
+      <span style="display: inline-block; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;">Machine Learning for Chemistry</span>
+    </a>
+  </h3>
+</div>
+
+<style>
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+h3 span {
+  border-right: .1em solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+}
+</style>
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
@@ -31,7 +59,7 @@ The datasets used in this project are from the Quantum Machine Database (QMDB). 
 
 The code is organized as follows:
 
-- `data/`: Contains the data used in the project.
+<!-- - `data/`: Contains the data used in the project.
   - `data/datasets/`: Contains the datasets used in the project.
   - `data/properties/`: General chemistry properties.
   - `data/utils/`: Utility functions accessing chemical properties
@@ -40,7 +68,26 @@ The code is organized as follows:
   - `models/trained_model.pth`: Pre-trained model.
 - `tmp/`: Temporary files.
 - `QMDB/`: Contains the Quantum Machine Database and related tools.
-- `Chem_ML.ipynb`: Main notebook for the project.
+- `Chem_ML.ipynb`: Main notebook for the project. -->
+
+```
+.
+├── Chem_ML.ipynb # Main notebook for the project
+├── LICENSE # MIT License
+├── QMDB # Contains the Quantum Machine Database and related tools
+├── assets
+│   └── img # Images used for the readme
+├── data
+│   ├── datasets # Contains the datasets(small) used in the project
+│   ├── properties # General chemistry properties
+│   └── utils # Includes utility functions accessing chemical properties
+├── generator # Generates attributes for chemicals based on their chemical structure
+├── model # Contains the machine learning models and related training and inference tools
+│   └── utils # Utility functions for training and inference
+├── readme.md # Readme file
+├── requirements.txt # Required packages
+└── tmp # Temporary files used for training
+```
 
 ## Installation
 ```bash
