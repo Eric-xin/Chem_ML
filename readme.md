@@ -9,7 +9,7 @@
 This repository contains machine learning algorithms and tools for chemistry. It is inspired by “A general-purpose machine learning framework for predicting” by Ward et al. [1]. The goal of this project is to provide a general-purpose machine learning framework for predicting materials properties.
 
 ## Introduction
-It is often hard to embed the chemical structure of a molecule into a machine learning model. Inspired by the work of Ward et al. [1], I use the stiochiometric attributes, elemental attrubutes, electronic structures attributes and ionic attributes to describe the molecule and embed them into a machine learning model. The model is trained on the Quantum Machine Database (QMDB) and is able to predict the properties of a inorganic molecule.
+It is often hard to embed the chemical structure of a molecule into a machine learning model. Inspired by the work of Ward et al. [1], I use the stiochiometric attributes, elemental attrubutes, electronic structures attributes and ionic attributes to describe the molecule and embed them into a machine learning model. The model is trained on [The Open Quantum Materials Database](https://oqmd.org/) (OQMD, or QMDB) and is able to predict the properties of a inorganic molecule.
 
 Basically, the model takes the chemical formula of a molecule as input and outputs the properties of the molecule. The properties of the molecule are the band gap, formation energy, and the stability of the molecule. Before training the model, the chemical formula is converted into a set of attributes that describe the molecule. The attributes are then fed into the machine learning model to train the model.
 
@@ -25,7 +25,7 @@ Basically, the model takes the chemical formula of a molecule as input and outpu
 <p align="right">--- Ward et al. [1]</p>
 
 ## Datasets
-The datasets used in this project are from the Quantum Machine Database (QMDB). The QMDB is a collection of quantum mechanical data for molecules and materials. The `data/datasets/small-data.txt` is a small dataset used for testing the model. The full dataset is not included in this repository due to its size. The full dataset can be downloaded from the [QMDB website](http://quantum-machine.org/datasets/).
+The datasets used in this project are from The Open Quantum Materials Database (OQMD or QMDB). The QMDB is a collection of quantum mechanical data for molecules and materials. The `data/datasets/small-data.txt` is a small dataset used for testing the model. The full dataset is not included in this repository due to its size. The full dataset can be downloaded from the [OQMD website](https://oqmd.org/download/).
 
 ## Code Structure
 
@@ -39,14 +39,14 @@ The code is organized as follows:
 - `models/`: Contains the machine learning models used in the project.
   - `models/trained_model.pth`: Pre-trained model.
 - `tmp/`: Temporary files.
-- `QMDB/`: Contains the Quantum Machine Database and related tools.
+- `QMDB/`: Contains The Open Quantum Materials Database and related tools.
 - `Chem_ML.ipynb`: Main notebook for the project. -->
 
 ```
 .
 ├── Chem_ML.ipynb # Main notebook for the project
 ├── LICENSE # MIT License
-├── QMDB # Contains the Quantum Machine Database and related tools
+├── QMDB # Contains The Open Quantum Materials Database and related tools
 ├── assets
 │   └── img # Images used for the readme
 ├── data
