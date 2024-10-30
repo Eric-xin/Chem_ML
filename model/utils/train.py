@@ -152,5 +152,5 @@ if __name__ == "__main__":
 
     # train(Net=Net, learning_rate=args.learning_rate, num_epochs=args.num_epochs, model_path=args.model_path, save_temp=args.save_temp, temp_path=args.temp_path)
 
-    # Example useage:
-    # python train.py --model_import_path model.simple_model_residue.Net --learning_rate 0.001 --num_epochs 1000 --model_path model/ --save_temp --temp_path tmp/
+# Example usage:
+# python train.py --model_import_path model.simple_model_residue.Net --learning_rate 0.001 --num_epochs 1000 --model_path model/ --save_temp --temp_path tmp/
