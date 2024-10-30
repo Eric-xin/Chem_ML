@@ -2,31 +2,9 @@
 
 <div>
   <h1 align="center">⚛️ Chem_ML 🤖</h1>
-  <h3 align="center">
-    <a href="https://github.com/eric-xin/Chem_ML" style="text-decoration: none; color: inherit;">
-      <span style="display: inline-block; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;">Machine Learning for Chemistry</span>
-    </a>
-  </h3>
+  <!-- <p align="center">Machine Learning for Chemistry</p> -->
+  <h3 align="center">Machine Learning for Chemistry</h3>
 </div>
-
-<style>
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: black; }
-}
-
-h3 span {
-  border-right: .1em solid black;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-}
-</style>
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
