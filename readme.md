@@ -1,10 +1,4 @@
-<!-- # Chem_ML: Machine Learning for Chemistry -->
-
-<div>
-  <h1 align="center">⚛️ Chem_ML 🤖</h1>
-  <!-- <p align="center">Machine Learning for Chemistry</p> -->
-  <h3 align="center">Machine Learning for Chemistry</h3>
-</div>
+# Chem_ML: Machine Learning for Chemistry
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
