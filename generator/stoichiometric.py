@@ -1,5 +1,6 @@
 import pandas as pd
-from data.utils.composition import CompositionEntry
+# from data.utils.composition import CompositionEntry
+from data.utils import CompositionEntry
 
 class StoichiometricAttributeGenerator:
     """Class to set up and generate descriptors based on the stoichiometry of a

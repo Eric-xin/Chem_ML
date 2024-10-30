@@ -3,8 +3,9 @@ import types
 import numpy as np
 import pandas as pd
 # from data.utils.composition import CompositionEntry
-from data.utils.composition import CompositionEntry
-from data.utils.look_up_data import LookUpData
+# from data.utils.composition import CompositionEntry
+# from data.utils.look_up_data import LookUpData
+from data.utils import CompositionEntry, LookUpData
 
 class ElementalPropertyAttributeGenerator:
     """Class to set up and generate descriptors based on elemental property

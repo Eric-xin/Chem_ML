@@ -2,9 +2,10 @@
 import sys
 import numpy as np
 import pandas as pd
-from data.utils.composition import CompositionEntry
-from data.utils.oxstate import OxidationStateGuesser
-from data.utils.look_up_data import LookUpData
+# from data.utils.composition import CompositionEntry
+# from data.utils.oxstate import OxidationStateGuesser
+# from data.utils.look_up_data import LookUpData
+from data.utils import CompositionEntry, OxidationStateGuesser, LookUpData
 
 class ChargeDependentAttributeGenerator:
     """Class to generate attributes derived from the oxidation states of
