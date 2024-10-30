@@ -49,6 +49,59 @@ cd Chem_ML
 pip install -r requirements.txt
 ```
 
+## Running the Code
+
+### Jupyter Notebook
+You can run the code by opening the `Chem_ML.ipynb` notebook in Jupyter Notebook.
+
+```bash
+jupyter notebook Chem_ML.ipynb
+```
+
+### Command Line Interface
+Or you can run the code in the terminal by the newly implemented command line interface.
+
+```bash
+python model/utils/inference.py --entry "Y2I6" --model "./model/trained_model.pth"
+python model/utils/train.py --model_import_path model.simple_model_residue.Net --learning_rate 0.001 --num_epochs 1000 --model_path model/ --save_temp --temp_path tmp/
+```
+
+**Command line arguments:**
+- model/utils/train.py
+```
+usage: train.py [-h] [--model_import_path MODEL_IMPORT_PATH] [--learning_rate LEARNING_RATE]
+                [--num_epochs NUM_EPOCHS] [--model_path MODEL_PATH] [--save_temp] [--temp_path TEMP_PATH]
+
+Train the ChemML network model.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model_import_path MODEL_IMPORT_PATH
+                        Path to the model class
+  --learning_rate LEARNING_RATE
+                        Learning rate for the optimizer
+  --num_epochs NUM_EPOCHS
+                        Number of epochs to train the model
+  --model_path MODEL_PATH
+                        Path to save the trained model
+  --save_temp           Flag to save temporary files
+  --temp_path TEMP_PATH
+                        Path to save temporary files if save_temp is set
+```
+
+- model/utils/inference.py
+```
+usage: inference.py [-h] [--entry ENTRY] [--model MODEL] [--network NETWORK]
+
+ChemML model inference
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --entry ENTRY      Entry Chemical Formula
+  --model MODEL      Model Path
+  --network NETWORK  Path to the model class
+```
+
 ## Model Structure
 *This is the structure of the currently used residue model*
 
