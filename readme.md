@@ -9,7 +9,7 @@
 This repository contains machine learning algorithms and tools for chemistry. It is inspired by “A general-purpose machine learning framework for predicting” by Ward et al. [1]. The goal of this project is to provide a general-purpose machine learning framework for predicting materials properties.
 
 ## Introduction
-It is often hard to embed the chemical structure of a molecule into a machine learning model. Inspired by the work of Ward et al. [1], I use the stiochiometric attributes, elemental attrubutes, electronic structures attributes and ionic attributes to describe the molecule and embed them into a machine learning model. The model is trained on [The Open Quantum Materials Database](https://oqmd.org/) (OQMD, or QMDB) and is able to predict the properties of a inorganic molecule.
+It is often hard to embed the chemical structure of a molecule into a machine learning model. Inspired by the work of Ward et al. [1], I use the stiochiometric attributes, elemental attrubutes, electronic structures attributes and ionic attributes to describe the molecule and embed them into a machine learning model. The model is trained on [The Open Quantum Materials Database](https://oqmd.org/) (OQMD) and is able to predict the properties of a inorganic molecule.
 
 Basically, the model takes the chemical formula of a molecule as input and outputs the properties of the molecule. The properties of the molecule are the band gap, formation energy, and the stability of the molecule. Before training the model, the chemical formula is converted into a set of attributes that describe the molecule. The attributes are then fed into the machine learning model to train the model.
 
@@ -25,7 +25,7 @@ Basically, the model takes the chemical formula of a molecule as input and outpu
 <p align="right">--- Ward et al. [1]</p>
 
 ## Datasets
-The datasets used in this project are from The Open Quantum Materials Database (OQMD or QMDB). The QMDB is a collection of quantum mechanical data for molecules and materials. The `data/datasets/small-data.txt` is a small dataset used for testing the model. The full dataset is not included in this repository due to its size. The full dataset can be downloaded from the [OQMD website](https://oqmd.org/download/).
+The datasets used in this project are from The Open Quantum Materials Database (OQMD). The OQMD is a collection of quantum mechanical data for molecules and materials. The `data/datasets/small-data.txt` is a small dataset used for testing the model. The full dataset is not included in this repository due to its size. The full dataset can be downloaded from the [OQMD website](https://oqmd.org/download/).
 
 ## Code Structure
 
@@ -39,18 +39,24 @@ The code is organized as follows:
 - `models/`: Contains the machine learning models used in the project.
   - `models/trained_model.pth`: Pre-trained model.
 - `tmp/`: Temporary files.
-- `QMDB/`: Contains The Open Quantum Materials Database and related tools.
+- `OQMD/`: Contains The Open Quantum Materials Database and related tools.
 - `Chem_ML.ipynb`: Main notebook for the project. -->
 
 ```
 .
 ├── Chem_ML.ipynb # Main notebook for the project
+├── Chem_ML_OQMD_100k.ipynb # Notebook for training the model on 100k OQMD dataset
+├── Chem_ML_OQMD_10k.ipynb # Notebook for training the model on 10k OQMD dataset
 ├── LICENSE # MIT License
-├── QMDB # Contains The Open Quantum Materials Database and related tools
+├── OQMD # Contains The Open Quantum Materials Database and related tools
 ├── assets
 │   └── img # Images used for the readme
 ├── data
 │   ├── datasets # Contains the datasets(small) used in the project
+│   │   ├── features_OQMD_100k.npy # Preprocessed features of the 100k OQMD dataset
+│   │   ├── oqmd.csv # OQMD dataset, contains about 500k data points
+│   │   ├── small_set.txt # Small dataset used for testing and training the model (this model is used in the Chem_ML.ipynb notebook)
+│   │   └── targets_OQMD_100k.npy # Preprocessed targets of the 100k OQMD dataset
 │   ├── properties # General chemistry properties
 │   └── utils # Includes utility functions accessing chemical properties
 ├── generator # Generates attributes for chemicals based on their chemical structure
@@ -77,8 +83,16 @@ You can run the code by opening the `Chem_ML.ipynb` notebook in Jupyter Notebook
 jupyter notebook Chem_ML.ipynb
 ```
 
+Also now the code is available in the `Chem_ML_OQMD_10k.ipynb` and `Chem_ML_OQMD_100k.ipynb` notebooks. You can run the code in the same way as the `Chem_ML.ipynb` notebook.
+```bash
+jupyter notebook Chem_ML_OQMD_10k.ipynb
+jupyter notebook Chem_ML_OQMD_100k.ipynb
+```
+
 ### Command Line Interface
-Or you can run the code in the terminal by the newly implemented command line interface.
+The code can also be run from the command line. The following commands can be used to train the model and make predictions.
+
+*Note: The command line interface for OQMD dataset is not implemented yet.*
 
 ```bash
 python model/utils/inference.py --entry "Y2I6" --model "./model/trained_model.pth"
@@ -128,6 +142,11 @@ optional arguments:
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Recent Updates
+- Added the command line interface for training and inference.
+- Added the notebook for training the model on the 10k OQMD dataset.
+- Added the notebook for training the model on the 100k OQMD dataset.
 
 ## To-Do
 - [ ] Implement the model on Google Colab to use more memory.
