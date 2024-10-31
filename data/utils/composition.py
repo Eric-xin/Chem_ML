@@ -1,5 +1,5 @@
 import re
-from itertools import zip_longest as izip
+from itertools import zip_longest
 from data.utils.look_up_data import LookUpData
 # from look_up_data import LookUpData
 
@@ -120,6 +120,8 @@ class CompositionEntry(object):
         """
 
         # Check for a guest structure (ex: Al2O3-2H20).
+        if not isinstance(composition, str):
+            raise TypeError("composition must be a string")
         start_guest = -1 if "-" not in composition else composition.index("-")
         pos = -1 if chr(183) not in composition else composition.index(chr(183))
 
@@ -185,13 +187,13 @@ class CompositionEntry(object):
             # Get the multiplier of the composition inside the parens.
             end_paren = pos
             pos += 1
-            mult = ""
+            multiplier = ""
             while pos < len(composition) and (composition[pos].isdigit() or
                                                   composition[pos] == "."):
-                mult += composition[pos]
+                multiplier += composition[pos]
                 pos += 1
 
-            paren_mult = 1.0 if not mult else float(mult)
+            paren_mult = 1.0 if not multiplier else float(multiplier)
 
             # Get the portion insides of those parens, and end portion.
             inside_paren = composition[start_paren+1:end_paren]
@@ -446,21 +448,21 @@ class CompositionEntry(object):
         return 0
 
     def __hash__(self):
-        """Function to compute the hashcode of this instance.
+        """Function to compute the hash code of this instance.
 
-        Computes the hashcode of the list of element ids and fractions
+        Computes the hash code of the list of element ids and fractions
         separately. Then does the logical XOR operation between the two
-        hashcodes and 1 and returns the result.
+        hash codes and 1 and returns the result.
 
         Returns
         -------
         output : int
-            Hashcode of this instance.
+            Hash code of this instance.
 
         """
 
         h1 = h2 = 0
-        for e,f in izip(self.element_ids, self.fractions):
+        for e,f in zip_longest(self.element_ids, self.fractions):
             h1 += 31*h1 + hash(e)
             h2 += 31*h2 + hash(f)
 
@@ -491,7 +493,7 @@ class CompositionEntry(object):
         return False
 
     def sort_and_normalize(self, to_sort=True):
-        """Function to sort the element ids based on their electronegativity
+        """Function to sort the element ids based on their electro-negativity
         order and normalizes the fractions.
 
         Makes sure the entry is in a proper format. Must be run from
@@ -505,7 +507,7 @@ class CompositionEntry(object):
 
         """
 
-        # Sort elements based on the electronegativity order.
+        # Sort elements based on the electro-negativity order.
         if to_sort:
             tmp_tuple = zip(self.element_ids, self.fractions)
             tmp_tuple = sorted(tmp_tuple, key=lambda xy: self.lp_sorting_order[xy[0]])
@@ -549,7 +551,7 @@ class CompositionEntry(object):
 
         """
 
-        for e,f in add_comp.iteritems():
+        for e,f in add_comp.items():
             # If total_comp contains this element.
             if e in total_comp:
                 total_comp[e] += multiplier * f
